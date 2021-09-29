@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:e_commerce_app/components/horizontal_listview.dart';
+import 'package:e_commerce_app/components/products.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -107,10 +108,30 @@ class _HomePageState extends State<HomePage> {
             imageCarousel,
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('Categories'),
+              child: Center(
+                child: Text(
+                  'Categories',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+              ),
             ),
             //Horizontal list view :
-            HorizontalList()
+            HorizontalList(),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Center(
+                child: Text(
+                  'Recent Products',
+                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+
+            Container(
+              height: 280.0,
+              child: Products(),
+            ),
           ],
         ));
   }
