@@ -25,9 +25,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.0),
-          child: CustomScrollView(
-            slivers: [MyAppBar()],
-          ),
+          child: MyAppBar(),
         ),
         body: ListView(
           children: [
@@ -39,7 +37,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   child: Image.asset(widget.productDetailPicture),
                 ),
                 footer: Container(
-                    color: Colors.white,
+                    color: Colors.white70,
                     child: ListTile(
                       leading: Container(
                         width: 140,
@@ -54,16 +52,150 @@ class _ProductDetailsState extends State<ProductDetails> {
                         children: [
                           Expanded(
                               child: Text(
-                            "${widget.productDetailOldPrice}",
+                            "\$${widget.productDetailOldPrice}",
                             style: TextStyle(
                                 color: Colors.grey,
                                 decoration: TextDecoration.lineThrough),
                           )),
-                          Expanded(child: Text("${widget.productDetailPrice}"))
+                          Expanded(
+                            child: Text("\$${widget.productDetailPrice}",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.red)),
+                          )
                         ],
                       ),
                     )),
               ),
+            ),
+            Row(
+              children: [
+                //The size button :
+                Expanded(
+                    child: MaterialButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text("Size"),
+                            content: Text("Choose the size"),
+                            actions: [
+                              MaterialButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(context);
+                                },
+                                child: Text(
+                                  'Close',
+                                  style: TextStyle(color: Colors.blueAccent),
+                                ),
+                              )
+                            ],
+                          );
+                        });
+                  },
+                  color: Colors.white,
+                  textColor: Colors.grey,
+                  elevation: 0.2,
+                  child: Row(
+                    children: [
+                      Expanded(child: Text("Size")),
+                      Expanded(child: Icon(Icons.arrow_drop_down)),
+                    ],
+                  ),
+                )),
+                Expanded(
+                    child: MaterialButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text("Color"),
+                            content: Text("Pick a Color"),
+                            actions: [
+                              MaterialButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(context);
+                                  },
+                                  child: Text(
+                                    'Close',
+                                    style: TextStyle(color: Colors.blueAccent),
+                                  ))
+                            ],
+                          );
+                        });
+                  },
+                  color: Colors.white,
+                  textColor: Colors.grey,
+                  elevation: 0.2,
+                  child: Row(
+                    children: [
+                      Expanded(child: Text("Color")),
+                      Expanded(child: Icon(Icons.arrow_drop_down)),
+                    ],
+                  ),
+                )),
+                Expanded(
+                    child: MaterialButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text('Quantity'),
+                            content: Text('How much Items do you want ? '),
+                            actions: [
+                              MaterialButton(
+                                  onPressed: () {
+                                    Navigator.of(context).pop(context);
+                                  },
+                                  child: Text(
+                                    "Close",
+                                    style: TextStyle(color: Colors.blueAccent),
+                                  ))
+                            ],
+                          );
+                        });
+                  },
+                  color: Colors.white,
+                  textColor: Colors.grey,
+                  elevation: 0.2,
+                  child: Row(
+                    children: [
+                      Expanded(child: Text("How Much")),
+                      Expanded(child: Icon(Icons.arrow_drop_down)),
+                    ],
+                  ),
+                ))
+              ],
+            ),
+            Row(
+              children: [
+                Expanded(
+                    child: MaterialButton(
+                  onPressed: () {},
+                  color: Colors.redAccent,
+                  textColor: Colors.white,
+                  elevation: 0.2,
+                  child: Text('Buy Now'),
+                )),
+                IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.add_shopping_cart),
+                    color: Colors.red),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(Icons.favorite_border),
+                  color: Colors.red,
+                ),
+              ],
+            ),
+            Divider(),
+            ListTile(
+              title: Text("Product details"),
+              subtitle: Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget massa turpis. Fusce condimentum sed dolor id dignissim. Cras non elit ornare, ultrices nulla id, blandit libero. Donec ultricies auctor lacus, vitae convallis lectus imperdiet et. Duis placerat nunc quis dapibus semper. Sed nec nulla posuere, iaculis tortor non, varius lacus. Integer in vestibulum est. Ut ut elit in odio viverra tristique sed eu nisi. Ut porttitor magna sit amet nunc dignissim, vel suscipit tortor sollicitudin. "),
             )
           ],
         ));

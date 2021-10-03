@@ -6,10 +6,11 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
+    return AppBar(
       elevation: 0.1,
       backgroundColor: Colors.redAccent,
-      title: Text('Shopo', style: GoogleFonts.arapey()),
+      title: Text('Shopo',
+          style: GoogleFonts.dekko(textStyle: TextStyle(fontSize: 30.0))),
       actions: [
         IconButton(
             onPressed: () {},

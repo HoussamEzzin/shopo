@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/components/appBar.dart';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:e_commerce_app/components/horizontal_listview.dart';
@@ -13,7 +14,21 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  bool _visible = true;
+  late final AnimationController _controller;
+  bool open = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 400),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     Widget imageCarousel = new Container(
@@ -39,9 +54,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(56.0),
-          child: CustomScrollView(
-            slivers: [MyAppBar()],
-          ),
+          child: MyAppBar(),
         ),
         drawer: Drawer(
             child: ListView(
