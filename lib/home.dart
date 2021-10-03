@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:e_commerce_app/components/horizontal_listview.dart';
 import 'package:e_commerce_app/components/products.dart';
+import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -36,8 +38,10 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
-          child: MyAppBar(),
+          preferredSize: Size.fromHeight(56.0),
+          child: CustomScrollView(
+            slivers: [MyAppBar()],
+          ),
         ),
         drawer: Drawer(
             child: ListView(

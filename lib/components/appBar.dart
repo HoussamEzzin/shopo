@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
       elevation: 0.1,
       backgroundColor: Colors.redAccent,
-      title: Text('Shopo'),
+      title: Text('Shopo', style: GoogleFonts.arapey()),
       actions: [
         IconButton(
             onPressed: () {},
