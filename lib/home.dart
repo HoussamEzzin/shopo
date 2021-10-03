@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/components/appBar.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:e_commerce_app/components/horizontal_listview.dart';
@@ -34,24 +35,9 @@ class _HomePageState extends State<HomePage> {
     );
 
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.redAccent,
-          title: Text('Shopo'),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.search,
-                  color: Colors.white,
-                )),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.shopping_cart,
-                  color: Colors.white,
-                ))
-          ],
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50.0),
+          child: MyAppBar(),
         ),
         drawer: Drawer(
             child: ListView(
@@ -127,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-
+            //recent products
             Container(
               height: 280.0,
               child: Products(),
