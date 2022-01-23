@@ -44,10 +44,11 @@ class _HomePageState extends State<HomePage>
           AssetImage('assets/images/w4.jpeg'),
         ],
         autoplay: false,
-        animationCurve: Curves.fastOutSlowIn,
-        animationDuration: Duration(milliseconds: 1000),
+        // animationCurve: Curves.fastOutSlowIn,
+        // animationDuration: Duration(milliseconds: 1000),
         dotSize: 4.0,
-        indicatorBgPadding: 8.0,
+        indicatorBgPadding: 2.0,
+        dotBgColor: Colors.transparent,
       ),
     );
 

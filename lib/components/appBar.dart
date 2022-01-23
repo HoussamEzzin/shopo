@@ -1,5 +1,7 @@
+import 'package:e_commerce_app/home.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:e_commerce_app/main.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({Key? key}) : super(key: key);
@@ -9,8 +11,14 @@ class MyAppBar extends StatelessWidget {
     return AppBar(
       elevation: 0.1,
       backgroundColor: Colors.redAccent,
-      title: Text('Shopo',
-          style: GoogleFonts.dekko(textStyle: TextStyle(fontSize: 30.0))),
+      title: InkWell(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => new HomePage()));
+        },
+        child: Text('Shopo',
+            style: GoogleFonts.dekko(textStyle: TextStyle(fontSize: 30.0))),
+      ),
       actions: [
         IconButton(
             onPressed: () {},

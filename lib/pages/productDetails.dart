@@ -196,6 +196,53 @@ class _ProductDetailsState extends State<ProductDetails> {
               title: Text("Product details"),
               subtitle: Text(
                   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget massa turpis. Fusce condimentum sed dolor id dignissim. Cras non elit ornare, ultrices nulla id, blandit libero. Donec ultricies auctor lacus, vitae convallis lectus imperdiet et. Duis placerat nunc quis dapibus semper. Sed nec nulla posuere, iaculis tortor non, varius lacus. Integer in vestibulum est. Ut ut elit in odio viverra tristique sed eu nisi. Ut porttitor magna sit amet nunc dignissim, vel suscipit tortor sollicitudin. "),
+            ),
+            Divider(),
+            new Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                  child: new Text(
+                    "Product name",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: new Text(widget.productDetailName),
+                )
+              ],
+            ),
+            new Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                  child: new Text(
+                    "Product brand",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                //todo : create product brand
+                Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: new Text("Brand X"),
+                )
+              ],
+            ),
+            new Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                  child: new Text(
+                    "Product condition",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(5.0),
+                  child: new Text("NEW"),
+                )
+              ],
             )
           ],
         ));
